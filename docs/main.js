@@ -9,7 +9,8 @@
 
   const answers = {
     "question1": "1",
-    "question2": "1"
+    "question2": "1",
+    "question3": "3"
   };
 
   const outputElem = document.querySelector("output");
@@ -22,6 +23,6 @@
         count++;
       }
     })
-    outputElem.value = `Your score: ${count} / 2`;
+    outputElem.value = `Your score: ${count} / ${Object.keys(answers).length}`;
   }
 })();
