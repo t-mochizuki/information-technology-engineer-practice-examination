@@ -40,10 +40,14 @@
         const fieldsetElem = createAnswerFieldSetElement(`${href}${i}/index.html`, i);
         this.appendChild(fieldsetElem);
       }
-      const inputElem = document.createElement("input");
-      inputElem.setAttribute("type", "submit");
-      inputElem.setAttribute("value", "Submit");
-      this.appendChild(inputElem);
+      const submitElem = document.createElement("input");
+      submitElem.setAttribute("type", "submit");
+      submitElem.setAttribute("value", "Submit");
+      this.appendChild(submitElem);
+      const resetElem = document.createElement("input");
+      resetElem.setAttribute("type", "reset");
+      resetElem.setAttribute("value", "Reset");
+      this.appendChild(resetElem);
       this.appendChild(document.createElement("output"));
     }
   }
