@@ -1,0 +1,14 @@
+.global-nav .nav-item {
+  list-style-type: none;
+}
+
+.global-nav .nav-item a {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}

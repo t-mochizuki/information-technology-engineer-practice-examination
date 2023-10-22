@@ -34,7 +34,9 @@
       super();
 
       const href = this.dataset.href;
-      for (let i = 1; i <= this.dataset.total; i++) {
+      const listInProgress = this.dataset.listInProgress.split(",").map(i => parseInt(i));
+      for (let i = 1; i <= parseInt(this.dataset.total); i++) {
+        if (listInProgress.includes(i)) continue;
         const fieldsetElem = createAnswerFieldSetElement(`${href}${i}/index.html`, i);
         this.appendChild(fieldsetElem);
       }
@@ -58,7 +60,8 @@
   const answers = {
     "question1": "1",
     "question2": "1",
-    "question3": "3"
+    "question3": "3",
+    "question4": "3"
   };
 
   const outputElem = document.querySelector("output");
