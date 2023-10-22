@@ -1,0 +1,15 @@
+table.figure {
+  border-spacing: 0;
+}
+
+table.figure td {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  height: 30px;
+  text-align: center;
+  padding: 5px;
+}
+
+table.figure + table.figure {
+  margin-top: 25px;
+}
