@@ -73,7 +73,8 @@
     "question11": "4",
     "question12": "3",
     "question13": "3",
-    "question14": "1"
+    "question14": "1",
+    "question15": "1"
   };
 
   const outputElem = document.querySelector("output");
