@@ -68,7 +68,9 @@
     "question4": "3",
     "question5": "4",
     "question6": "1",
+    // "question7": "1",
     "question8": "2",
+    // "question9": "1",
     "question10": "2",
     "question11": "4",
     "question12": "3",
@@ -77,7 +79,19 @@
     "question15": "1",
     "question16": "4",
     "question17": "1",
-    "question18": "4"
+    "question18": "4",
+    // "question19": "1",
+    // "question20": "2",
+    "question21": "2"
+    // "question22": "3",
+    // "question23": "2",
+    // "question24": "4",
+    // "question25": "4",
+    // "question26": "2",
+    // "question27": "3",
+    // "question28": "2",
+    // "question29": "2",
+    // "question30": "1"
   };
 
   const outputElem = document.querySelector("output");
