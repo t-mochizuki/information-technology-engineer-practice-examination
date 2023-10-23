@@ -86,8 +86,8 @@
     "question22": "3",
     "question23": "2",
     "question24": "4",
-    "question25": "4"
-    // "question26": "2",
+    "question25": "4",
+    "question26": "2"
     // "question27": "3",
     // "question28": "2",
     // "question29": "2",
