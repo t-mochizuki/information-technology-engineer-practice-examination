@@ -70,7 +70,7 @@
     "question6": "1",
     "question7": "1",
     "question8": "2",
-    // "question9": "1",
+    "question9": "1",
     "question10": "2",
     "question11": "4",
     "question12": "3",

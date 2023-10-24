@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title>令和5年度 秋期 データベーススペシャリスト試験 午前Ⅰ 問9</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <p>
+    DBMS をシステム障害発生後に再立上げするとき, ロールフォワードすべきトランザクションとロールバックすべきトランザクションの組合せとして, 適切なものはどれか。
+    ここで, トランザクションの中で実行される処理内容は次のとおりとする。
+    </p>
+
+    <table class="figure">
+      <tr>
+        <td>トランザクション</td>
+        <td>データベースに対する Read 回数 と Write 回数</td>
+      </tr>
+      <tr><td>T1, T2</td><td>Read 10, Write 20</td></tr>
+      <tr><td>T3, T4</td><td>Read 100</td></tr>
+      <tr><td>T5, T6</td><td>Read 20, Write 10</td></tr>
+    </table>
+
+    <table class="gantt-chart">
+      <tbody>
+        <tr>
+          <td>T1</td>
+          <td colspan="2"><div style="width: 50px; border-bottom: solid;"></div></td>
+          <td rowspan="6" style="writing-mode: vertical-rl; border: solid;">チェックポイント</td>
+          <td colspan="7"></td>
+          <td rowspan="6" style="writing-mode: vertical-rl; border-left: solid;">障害発生</td>
+        </tr>
+        <tr>
+          <td>T2</td>
+          <td></td><td><div class="solid-line"></div></td>
+
+          <td><div class="solid-line"></div></td><td><div class="solid-line"></div></td>
+          <td><div class="solid-line"></div></td><td><div class="solid-line"></div></td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td>T3</td>
+          <td colspan="2"></td>
+
+          <td colspan="2"></td>
+          <td colspan="5"><div class="dotted-line"></div></td>
+        </tr>
+        <tr>
+          <td>T4</td>
+          <td colspan="2"><div class="dotted-line"></div></td>
+
+          <td colspan="7"><div class="dotted-line"></div></td>
+        </tr>
+        <tr>
+          <td>T5</td>
+          <td colspan="2"></td>
+
+          <td></td>
+          <td colspan="5"><div class="solid-line"></div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>T6</td>
+          <td colspan="2"></td>
+
+          <td colspan="2"></td>
+          <td></td>
+          <td colspan="4"><div class="dotted-line"></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="legend">
+      <tr>
+        <td style="width: 50px;"><div class="dotted-line"></div></td>
+        <td>はコミットされていないトランザクションを示す。</td>
+      </tr>
+      <tr>
+        <td style="width: 50px;"><div class="solid-line"></div></td>
+        <td>はコミットされたトランザクションを示す。</td>
+      </tr>
+    </table>
+
+    <table class="figure">
+      <tr>
+        <td></td>
+        <td>ロールフォワード</td>
+        <td>ロールバック</td>
+      </tr>
+      <tr><td>ア</td><td>T2, T5</td><td>T6</td></tr>
+      <tr><td>イ</td><td>T2, T5</td><td>T3, T6</td></tr>
+      <tr><td>ウ</td><td>T1, T2, T5</td><td>T6</td></tr>
+      <tr><td>エ</td><td>T1, T2, T5</td><td>T3, T6</td></tr>
+    </table>
+
+    <p>
+    出典：令和5年度 秋期 データベーススペシャリスト試験 午前Ⅰ 問9
+    </p>
+  </body>
+</html>
