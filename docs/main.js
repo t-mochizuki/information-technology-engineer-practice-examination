@@ -68,7 +68,7 @@
     "question4": "3",
     "question5": "4",
     "question6": "1",
-    // "question7": "1",
+    "question7": "1",
     "question8": "2",
     // "question9": "1",
     "question10": "2",

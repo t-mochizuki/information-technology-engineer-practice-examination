@@ -4,21 +4,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title>令和5年度 秋期 データベーススペシャリスト試験 午前Ⅰ 問7</title>
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
     <p>
-    真理値表に示す3入力多数決回路はどれか。
+    真理値表に示す論理式はどれか。
     </p>
 
+    <table class="figure">
+      <thead>
+        <tr><th colspan="3">入力</th><th>出力</th></tr>
+        <tr><th>A</th><th>B</th><th>C</th><th>Y</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+      </tbody>
+    </table>
+
     <table>
-      <tr><td>ア</td><td></td></tr>
-      <tr><td>イ</td><td></td></tr>
-      <tr><td>ウ</td><td></td></tr>
-      <tr><td>エ</td><td></td></tr>
+      <tr><td>ア</td><td>Y = ((A AND B) OR (B AND C)) OR (C AND A)</td></tr>
+      <tr><td>イ</td><td>Y = ((A XOR B) OR (B XOR C)) OR (C XOR A)</td></tr>
+      <tr><td>ウ</td><td>Y = ((A OR B) AND (B OR C)) NAND (C OR A)</td></tr>
+      <tr><td>エ</td><td>Y = ((A XOR B) AND (B XOR C)) NAND (C XOR A)</td></tr>
     </table>
 
     <p>
     出典：令和5年度 秋期 データベーススペシャリスト試験 午前Ⅰ 問7
+    </p>
+
+    <p>
+    問題の一部を改変しています。3入力多数決回路を論理式に改変しています。
     </p>
   </body>
 </html>

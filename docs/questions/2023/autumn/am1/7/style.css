@@ -1,0 +1,10 @@
+table.figure {
+  border-spacing: 0;
+}
+table.figure td,
+table.figure th {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  width: 40px;
+  text-align: center;
+}
