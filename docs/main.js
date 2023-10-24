@@ -81,7 +81,7 @@
     "question17": "1",
     "question18": "4",
     // "question19": "1",
-    // "question20": "2",
+    "question20": "2",
     "question21": "2",
     "question22": "3",
     "question23": "2",
