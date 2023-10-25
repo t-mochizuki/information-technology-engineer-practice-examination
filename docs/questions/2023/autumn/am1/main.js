@@ -33,11 +33,10 @@
     constructor() {
       super();
 
-      const href = this.dataset.href;
       const listInProgress = this.dataset.listInProgress.split(",").map(i => parseInt(i));
       for (let i = 1; i <= parseInt(this.dataset.total); i++) {
         if (listInProgress.includes(i)) continue;
-        const fieldsetElem = createAnswerFieldSetElement(`${href}${i}/index.html`, i);
+        const fieldsetElem = createAnswerFieldSetElement(`${i}/index.html`, i);
         this.appendChild(fieldsetElem);
       }
       const submitElem = document.createElement("input");
