@@ -60,44 +60,27 @@
     new FormData(formElem);
   };
 
-  const answers = {
-    "question1": "4",
-    "question2": "3",
-    "question3": "4",
-    "question4": "2",
-    "question5": "4",
-    "question6": "1",
-    "question7": "3",
-    "question8": "3",
-    "question9": "4",
-    "question10": "1",
-    "question11": "3",
-    "question12": "4",
-    "question13": "3",
-    "question14": "2",
-    "question15": "2",
-    "question16": "4",
-    "question17": "4",
-    "question18": "4",
-    "question19": "3",
-    "question20": "4",
-    "question21": "4",
-    "question22": "4",
-    "question23": "2",
-    "question24": "4",
-    "question25": "4"
-  };
-
-  const outputElem = document.querySelector("output");
-
-  formElem.onformdata = (e) => {
-    const formData = e.formData;
-    let count = 0;
-    formData.forEach((answer, index) => {
-      if (answer === answers[index]) {
-        count++;
-      }
+  fetch(`index.json`)
+    .then((response) => response.json())
+    .then((data) => {
+      let answers = {};
+      data["answers"].forEach((elem, i) => {
+        answers[`question${i+1}`] = elem["value"];
+      });
+      return answers;
     })
-    outputElem.value = `Your score: ${count} / ${Object.keys(answers).length}`;
-  }
+    .then((answers) => {
+      const outputElem = document.querySelector("output");
+
+      formElem.onformdata = (e) => {
+        const formData = e.formData;
+        let count = 0;
+        formData.forEach((answer, index) => {
+          if (parseInt(answer) === answers[index]) {
+            count++;
+          }
+        })
+        outputElem.value = `Your score: ${count} / ${Object.keys(answers).length}`;
+      }
+    });
 })();
