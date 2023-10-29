@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title>令和5年度 秋期 データベーススペシャリスト試験 午前&#8545; 問9</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <p>
+    &ldquo;成績&rdquo; 表から, クラスごとに得点の高い順に個人を順位付けした結果を求める SQL 文の, a に入れる字句はどれか。
+    </p>
+
+    <div class="inline">
+      <table class="relation">
+        <caption>成績</caption>
+        <tr>
+          <th>氏名</th>
+          <th>クラス</th>
+          <th>得点</th>
+        </tr>
+        <tr>
+          <td>情報太郎</td>
+          <td>A</td>
+          <td>80</td>
+        </tr>
+
+        <tr>
+          <td>情報次郎</td>
+          <td>A</td>
+          <td>63</td>
+        </tr>
+
+        <tr>
+          <td>情報花子</td>
+          <td>B</td>
+          <td>70</td>
+        </tr>
+
+        <tr>
+          <td>情報桜子</td>
+          <td>B</td>
+          <td>92</td>
+        </tr>
+
+        <tr>
+          <td>情報三郎</td>
+          <td>A</td>
+          <td>78</td>
+        </tr>
+      </table>
+
+      <table class="output">
+        <caption>[結果]</caption>
+        <tr>
+          <th>氏名</th>
+          <th>クラス</th>
+          <th>得点</th>
+          <th>順位</th>
+        </tr>
+
+        <tr>
+          <td>情報太郎</td>
+          <td>A</td>
+          <td>80</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>情報三郎</td>
+          <td>A</td>
+          <td>78</td>
+          <td>2</td>
+        </tr>
+
+        <tr>
+          <td>情報次郎</td>
+          <td>A</td>
+          <td>63</td>
+          <td>3</td>
+        </tr>
+
+        <tr>
+          <td>情報桜子</td>
+          <td>B</td>
+          <td>92</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>情報花子</td>
+          <td>B</td>
+          <td>70</td>
+          <td>2</td>
+        </tr>
+      </table>
+    </div>
+
+    <p>
+    [SQL文]
+    </p>
+
+    <ul>
+      <li>SELECT 氏名, クラス, 得点,</li>
+      <ul>
+        <li>
+          <em>a</em>() OVER (PARTITION BY クラス ORDER BY 得点 DESC) 順位
+        </li>
+        <li>FROM 成績</li>
+      </ul>
+    </ul>
+
+    <table>
+      <tr><td>ア</td><td>CUME_DIST</td></tr>
+      <tr><td>イ</td><td>MAX</td></tr>
+      <tr><td>ウ</td><td>PERCENT_RANK</td></tr>
+      <tr><td>エ</td><td>RANK</td></tr>
+    </table>
+
+    <p>
+    出典：令和5年度 秋期 データベーススペシャリスト試験 午前&#8545; 問9
+    </p>
+  </body>
+</html>

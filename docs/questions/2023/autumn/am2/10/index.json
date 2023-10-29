@@ -1,0 +1,11 @@
+{
+  "title": "令和5年度 秋期 データベーススペシャリスト試験 午前&#8545; 問10",
+  "question": "表Aと表Bから, どちらか一方にだけ含まれる ID を得る SQL 文の a に入れる字句はどれか。",
+  "options": [
+    {"id": "ア", "describe": "FULL OUTER JOIN"},
+    {"id": "イ", "describe": "INNER JOIN"},
+    {"id": "ウ", "describe": "LEFT OUTER JOIN"},
+    {"id": "エ", "describe": "RIGHT OUTER JOIN"}
+  ],
+  "source": "出典：令和5年度 秋期 データベーススペシャリスト試験 午前&#8545; 問10"
+}

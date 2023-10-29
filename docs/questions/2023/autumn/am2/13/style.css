@@ -1,0 +1,15 @@
+ul {
+  list-style-type: none;
+}
+
+em {
+  font-style: normal;
+}
+
+em.solid {
+  text-decoration: underline;
+}
+
+em.dashed {
+  text-decoration: underline dashed;
+}

@@ -1,0 +1,15 @@
+ul {
+  list-style-type: none;
+}
+
+table {
+  border-spacing: 0;
+}
+
+table td {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  height: 30px;
+  text-align: center;
+  padding: 5px;
+}

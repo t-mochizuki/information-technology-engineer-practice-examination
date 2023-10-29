@@ -1,0 +1,8 @@
+ul {
+  list-style-type: none;
+}
+
+em {
+  text-decoration: underline;
+  font-style: normal;
+}

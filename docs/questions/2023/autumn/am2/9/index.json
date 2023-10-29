@@ -1,0 +1,11 @@
+{
+  "title": "令和5年度 秋期 データベーススペシャリスト試験 午前&#8545; 問9",
+  "question": "&ldquo;成績&rdquo; 表から, クラスごとに得点の高い順に個人を順位付けした結果を求める SQL 文の, a に入れる字句はどれか。",
+  "options": [
+    {"id": "ア", "describe": "CUME_DIST"},
+    {"id": "イ", "describe": "MAX"},
+    {"id": "ウ", "describe": "PERCENT_RANK"},
+    {"id": "エ", "describe": "RANK"}
+  ],
+  "source": "出典：令和5年度 秋期 データベーススペシャリスト試験 午前&#8545; 問9"
+}

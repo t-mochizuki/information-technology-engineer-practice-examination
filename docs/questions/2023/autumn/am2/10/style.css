@@ -1,0 +1,50 @@
+div.inline table {
+  border-spacing: 0;
+}
+
+div.inline table caption {
+  text-align: left;
+}
+
+div.inline table th,
+div.inline table td {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+}
+
+div.inline table {
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+div.inline > table {
+  float: left;
+}
+
+table + table {
+  margin-left: 30px;
+}
+
+div.inline::after {
+  content: '';
+  display: block;
+  height: 30px;
+  clear: both;
+}
+
+ul {
+  list-style-type: none;
+}
+
+em {
+  font-style: normal;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid;
+}
