@@ -1,4 +1,4 @@
-# usage: ruby script/question_template.rb docs/questions/2023/autumn/am1/15/index.json
+# usage: ruby scripts/question_template.rb docs/2023/autumn/am1/15/index.json
 require 'erb'
 require 'json'
 
