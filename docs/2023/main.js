@@ -1,5 +1,5 @@
 (() => {
-  function createAnswerFieldSetElement(href, nth, answerSheetOnly) {
+  function createAnswerColumn(href, nth, answerSheetOnly) {
     const fieldsetElem = document.createElement("fieldset");
 
     const aElem = document.createElement("a");
@@ -38,8 +38,8 @@
       const listInProgress = this.dataset.listInProgress.split(",").map(i => parseInt(i));
       for (let i = 1; i <= parseInt(this.dataset.total); i++) {
         if (listInProgress.includes(i)) continue;
-        const fieldsetElem = createAnswerFieldSetElement(`${i}/index.html`, i, this.dataset.answerSheetOnly);
-        this.appendChild(fieldsetElem);
+        const answerColumn = createAnswerColumn(`${i}/index.html`, i, this.dataset.answerSheetOnly);
+        this.appendChild(answerColumn);
       }
       const submitElem = document.createElement("input");
       submitElem.setAttribute("type", "submit");
