@@ -1,9 +1,11 @@
 (() => {
-  function createAnswerFieldSetElement(href, nth) {
+  function createAnswerFieldSetElement(href, nth, answerSheetOnly) {
     const fieldsetElem = document.createElement("fieldset");
 
     const aElem = document.createElement("a");
-    aElem.setAttribute("href", href);
+    if (answerSheetOnly !== 'true') {
+      aElem.setAttribute("href", href);
+    }
     aElem.innerText = `問${nth}`;
 
     const legendElem = document.createElement("legend");
@@ -36,7 +38,7 @@
       const listInProgress = this.dataset.listInProgress.split(",").map(i => parseInt(i));
       for (let i = 1; i <= parseInt(this.dataset.total); i++) {
         if (listInProgress.includes(i)) continue;
-        const fieldsetElem = createAnswerFieldSetElement(`${i}/index.html`, i);
+        const fieldsetElem = createAnswerFieldSetElement(`${i}/index.html`, i, this.dataset.answerSheetOnly);
         this.appendChild(fieldsetElem);
       }
       const submitElem = document.createElement("input");
