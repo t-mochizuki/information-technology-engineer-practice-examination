@@ -30,57 +30,46 @@
   }
   customElements.define("app-div", AppElement, { extends: "div" });
 
-  function createAnswerColumn(href, nth, answerSheetOnly) {
-    const fieldsetElem = document.createElement("fieldset");
-
-    const aElem = document.createElement("a");
-    if (answerSheetOnly !== 'true') {
-      aElem.setAttribute("href", href);
-    }
-    aElem.innerText = `問${nth}`;
-
-    const legendElem = document.createElement("legend");
-    legendElem.appendChild(aElem);
-    fieldsetElem.appendChild(legendElem);
-
-    [
-      "ア",
-      "イ",
-      "ウ",
-      "エ"
-    ].forEach((text, index) => {
-      const labelElem = document.createElement("label");
-      const inputElem = document.createElement("input");
-      inputElem.setAttribute("type", "radio");
-      inputElem.setAttribute("name", `question${nth}`);
-      inputElem.setAttribute("value", index + 1);
-      labelElem.appendChild(inputElem);
-      labelElem.appendChild(new Text(text));
-      fieldsetElem.appendChild(labelElem);
+  function createMultipleChoice(nth) {
+    return ["ア", "イ", "ウ", "エ"].map((text, index) => {
+      return `
+<label>
+  <input type="radio" name="question${nth}" value="${index + 1}"></input>
+  ${text}
+</label>
+      `
     });
+  }
 
-    return fieldsetElem;
+  function createAnswerColumn(href, nth, answerSheetOnly) {
+    return `
+<fieldset>
+  <legend>
+    <a ${answerSheetOnly === 'true' ? '' : `href="${href}"`}>問${nth}</a>
+  </legend>
+  ${createMultipleChoice(nth).join('')}
+</fieldset>
+    `
   }
 
   class AnswerFormElement extends HTMLFormElement {
     constructor() {
       super();
 
+      const answerColumns = [];
       const listInProgress = this.dataset.listInProgress.split(",").map(i => parseInt(i));
       for (let i = 1; i <= parseInt(this.dataset.total); i++) {
         if (listInProgress.includes(i)) continue;
         const answerColumn = createAnswerColumn(`${i}/index.html`, i, this.dataset.answerSheetOnly);
-        this.appendChild(answerColumn);
+        answerColumns.push(answerColumn);
       }
-      const submitElem = document.createElement("input");
-      submitElem.setAttribute("type", "submit");
-      submitElem.setAttribute("value", "Submit");
-      this.appendChild(submitElem);
-      const resetElem = document.createElement("input");
-      resetElem.setAttribute("type", "reset");
-      resetElem.setAttribute("value", "Reset");
-      this.appendChild(resetElem);
-      this.appendChild(document.createElement("output"));
+
+      this.innerHTML = `
+${answerColumns.join('')}
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+<output></output>
+      `
     }
   }
   customElements.define("answer-form", AnswerFormElement, { extends: "form" });
