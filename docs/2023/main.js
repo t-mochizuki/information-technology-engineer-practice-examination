@@ -41,7 +41,7 @@
     return `
 <fieldset>
   <legend>
-    <a ${answerSheetOnly === 'true' ? '' : `href="${href}"`}>問${nth}</a>
+    <a ${answerSheetOnly === 'true' ? '' : `href="${href}"`} target="_blank">問${nth}</a>
   </legend>
   ${createMultipleChoice(nth).join('')}
 </fieldset>
