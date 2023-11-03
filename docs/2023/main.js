@@ -12,12 +12,8 @@
 <div class="wrapper">
   <main>
     <div>
-      <form
-        is="answer-form"
-        data-total="${this.dataset.total}"
-        data-list-in-progress=""
-        data-answer-sheet-only="${this.dataset.answerSheetOnly}"
-      >
+      <form>
+        ${createAnswerSheet(this.dataset.total, "", this.dataset.answerSheetOnly)}
       </form>
     </div>
   </main>
@@ -52,27 +48,22 @@
     `
   }
 
-  class AnswerFormElement extends HTMLFormElement {
-    constructor() {
-      super();
+  function createAnswerSheet(total, listInProgress, answerSheetOnly) {
+    const answerColumns = [];
+    listInProgress = listInProgress.split(",").map(i => parseInt(i));
+    for (let i = 1; i <= parseInt(total); i++) {
+      if (listInProgress.includes(i)) continue;
+      const answerColumn = createAnswerColumn(`${i}/index.html`, i, answerSheetOnly);
+      answerColumns.push(answerColumn);
+    }
 
-      const answerColumns = [];
-      const listInProgress = this.dataset.listInProgress.split(",").map(i => parseInt(i));
-      for (let i = 1; i <= parseInt(this.dataset.total); i++) {
-        if (listInProgress.includes(i)) continue;
-        const answerColumn = createAnswerColumn(`${i}/index.html`, i, this.dataset.answerSheetOnly);
-        answerColumns.push(answerColumn);
-      }
-
-      this.innerHTML = `
+    return `
 ${answerColumns.join('')}
 <input type="submit" value="Submit">
 <input type="reset" value="Reset">
 <output></output>
-      `
-    }
+    `
   }
-  customElements.define("answer-form", AnswerFormElement, { extends: "form" });
 
   const formElem = document.querySelector("form");
 
