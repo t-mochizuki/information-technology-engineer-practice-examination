@@ -1,4 +1,35 @@
 (() => {
+  class AppElement extends HTMLDivElement {
+    constructor() {
+      super();
+
+      this.innerHTML = `
+<header class="header">
+  <nav class="global-nav">
+  </nav>
+</header>
+
+<div class="wrapper">
+  <main>
+    <div>
+      <form
+        is="answer-form"
+        data-total="${this.dataset.total}"
+        data-list-in-progress=""
+        data-answer-sheet-only="${this.dataset.answerSheetOnly}"
+      >
+      </form>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+</footer>
+      `
+    }
+  }
+  customElements.define("app-div", AppElement, { extends: "div" });
+
   function createAnswerColumn(href, nth, answerSheetOnly) {
     const fieldsetElem = document.createElement("fieldset");
 
