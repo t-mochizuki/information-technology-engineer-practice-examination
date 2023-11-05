@@ -1,0 +1,29 @@
+{
+  "answers": [
+    { "id": 1,  "value": 3 },
+    { "id": 2,  "value": 2 },
+    { "id": 3,  "value": 1 },
+    { "id": 4,  "value": 4 },
+    { "id": 5,  "value": 3 },
+    { "id": 6,  "value": 2 },
+    { "id": 7,  "value": 1 },
+    { "id": 8,  "value": 4 },
+    { "id": 9,  "value": 2 },
+    { "id": 10, "value": 1 },
+    { "id": 11, "value": 1 },
+    { "id": 12, "value": 4 },
+    { "id": 13, "value": 1 },
+    { "id": 14, "value": 4 },
+    { "id": 15, "value": 1 },
+    { "id": 16, "value": 2 },
+    { "id": 17, "value": 4 },
+    { "id": 18, "value": 2 },
+    { "id": 19, "value": 2 },
+    { "id": 20, "value": 1 },
+    { "id": 21, "value": 1 },
+    { "id": 22, "value": 4 },
+    { "id": 23, "value": 3 },
+    { "id": 24, "value": 2 },
+    { "id": 25, "value": 4 }
+  ]
+}
